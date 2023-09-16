@@ -1,3 +1,6 @@
 # Algorithm-Exercise
 
-this reposotory is use to solve diffrent idea of Algorithm in the book of Jeff Erickson 
+this repository is used to solve different ideas of Algorithms in the book of Jeff Erickson 
+
+## Note 
+you have to First Start At Index.html 
