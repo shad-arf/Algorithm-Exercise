@@ -49,22 +49,31 @@
                         lastElement = FirstTower.pop();
                         ThirdTower.push =(lastElement);
                     }
-                    if (SecondTower[SecondTower.length -1] < FirstTower[FirstTower.length -1]|| FirstTower== null)
+                    if ((SecondTower[SecondTower.length -1] < ThirdTower[ThirdTower.length -1])|| ThirdTower== null)
                     {
+                        if(FirstTower== null)
+                        {
+                            lastElement = SecondTower.pop();
+                             FirstTower.push =(lastElement);
+
+                        }
+                        
+                        lastElement = SecondTower.pop();
+                        ThirdTower.push =(lastElement);
+                        lastElement = FirstTower.pop();
+                        SecondTower.push =(lastElement);
+                        lastElement = ThirdTower.pop();
+                        FirstTower.push =(lastElement);
                         lastElement = SecondTower.pop();
                         FirstTower.push =(lastElement);
+                        
                     }
-                    if (SecondTower[SecondTower.length -1] < ThirdTower[ThirdTower.length -1]|| ThirdTower== null)
-                    {
-                            lastElement = SecondTower.pop();
-                            ThirdTower.push =(lastElement);
-                    }
-                    if (ThirdTower[ThirdTower.length -1] < FirstTower[FirstTower.length -1]|| FirstTower== null)
+                    if ((ThirdTower[ThirdTower.length -1] < FirstTower[FirstTower.length -1] && SecondTower!=null)|| FirstTower== null)
                     {
                         lastElement = ThirdTower.pop();
                         FirstTower.push =(lastElement);
                     }
-                    if (ThirdTower[ThirdTower.length -1] < SecondTower[SecondTower.length -1]|| SecondTower== null)
+                    if (ThirdTower[ThirdTower.length -1] < SecondTower[SecondTower.length -1]&& SecondTower!= null)
                     {
                         lastElement = ThirdTower.pop();
                         SecondTower.push =(lastElement);
