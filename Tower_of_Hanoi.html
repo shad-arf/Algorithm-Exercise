@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower of Hanoi</title>
+</head>
+<body>
+    <h1>Tower of Hanoi</h1>
+    
+    <div>
+        <label for="bottlesInput">Enter the number of Towers Levels:</label>
+        <input type="number" id="bottlesInput">
+        <button id="submitButton">Submit</button>
+        <a href="index.html"><button >back</button></a>
+
+        
+    </div>
+
+    <p id="lyricsOutput"></p>
+
+    <script>
+        document.getElementById("submitButton").addEventListener("click", function () {
+            var n = parseInt(document.getElementById("bottlesInput").value);
+            const FirstTower = [];
+            const SecondTower = [];
+            const ThirdTower = [];
+            var a = n;
+
+            for (var i = n ; i >=1 ; i--)
+            { 
+                FirstTower.push(i);
+            }
+            
+            
+            for (var i = n ; i >=1 ; i--)
+            {
+                while(ThirdTower[ThirdTower.length -1]!=a)
+                {
+                    var lastElement=0;
+                   
+                    if (FirstTower[FirstTower.length -1] < SecondTower[SecondTower.length -1] ||SecondTower== null )
+                    {
+                        lastElement = FirstTower.pop();
+                        SecondTower.push(lastElement);
+                    }
+                    if (FirstTower[FirstTower.length -1] < ThirdTower[ThirdTower.length -1] || ThirdTower== null)
+                    {
+                        lastElement = FirstTower.pop();
+                        ThirdTower.push =(lastElement);
+                    }
+                    if (SecondTower[SecondTower.length -1] < FirstTower[FirstTower.length -1]|| FirstTower== null)
+                    {
+                        lastElement = SecondTower.pop();
+                        FirstTower.push =(lastElement);
+                    }
+                    if (SecondTower[SecondTower.length -1] < ThirdTower[ThirdTower.length -1]|| ThirdTower== null)
+                    {
+                            lastElement = SecondTower.pop();
+                            ThirdTower.push =(lastElement);
+                    }
+                    if (ThirdTower[ThirdTower.length -1] < FirstTower[FirstTower.length -1]|| FirstTower== null)
+                    {
+                        lastElement = ThirdTower.pop();
+                        FirstTower.push =(lastElement);
+                    }
+                    if (ThirdTower[ThirdTower.length -1] < SecondTower[SecondTower.length -1]|| SecondTower== null)
+                    {
+                        lastElement = ThirdTower.pop();
+                        SecondTower.push =(lastElement);
+                    }
+                }
+                a--;
+            }
+
+
+            document.getElementById("lyricsOutput").innerHTML = FirstTower;
+
+
+           
+            
+           
+        });
+    </script>
+</body>
+</html>
